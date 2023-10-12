@@ -13,7 +13,21 @@
         <option value="kanin">Kanin</option>
     </select> <br> <br>
     <p></p>
-    <button></button>
+    <button id="endreTekst">Endre Tekst</button>
 
+    <script>
+    
+        let selectElement = document.getElementById("velgDyr");
+        let pElement = document.querySelector("p");
+
+        let endreTekstKnapp = document.getElementById("endreTekst");
+
+        endreTekstKnapp.addEventListener("click", function() {
+
+            let valgtDyr = selectElement.value;
+
+            pElement.textContent = "Du valgte " + valgtDyr;
+        });
+    </script>
 </body>
 </html>
