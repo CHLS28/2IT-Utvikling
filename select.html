@@ -19,29 +19,29 @@
         color: white;
     }
 </style>
-<body>
-    <h1>Velg favoritt dyr</h1>
-    <select name="dyr" id="velgDyr">
-        <option value="hund">Hund</option>
-        <option value="katt">Katt</option>
-        <option value="kanin">Kanin</option>
-    </select> <br> <br>
-    <p></p>
-    <button id="endreTekst">Endre Tekst</button>
-
-    <script>
+<body>  
+    <h1>Ditt favorittkjæledyr</h1>
     
-        let selectElement = document.getElementById("velgDyr");
-        let pElement = document.querySelector("p");
-
-        let endreTekstKnapp = document.getElementById("endreTekst");
-
-        endreTekstKnapp.addEventListener("click", function() {
-
-            let valgtDyr = selectElement.value;
-
-            pElement.textContent = "Du valgte " + valgtDyr;
-        });
+    <select id="selectDyr">
+        <option value="">Velg dyr her...</option>
+        <option value="https://dyrevern.no/content/uploads/2019/12/Katt_teppe.jpg">Katt</option>
+        <option value="https://www.cbs42.com/wp-content/uploads/sites/81/2022/06/21b34b8003bd4cd8a7602c40fe261bbb.jpg">Pytonslange</option>
+        <option value="https://media.wwf.no/assets/article_images/Dyr/_1600x1067_crop_center-center_none/Stumpneseape_WW1125857.jpg">Ape</option>
+    </select>
+    <hr>
+    <img width="30%" id="bildeDyr">
+    
+    <script>
+    function visBilde(){
+        let valgtDyrURL = selectDyr.value;
+        if (valgtDyrURL == ""){
+            alert("Du må velge et dyr!");
+        }else{
+            bildeDyr.src = valgtDyrURL; 
+        }
+    }
+    
+    selectDyr.addEventListener("change", visBilde);
     </script>
-</body>
-</html>
+    </body>
+    </html>
